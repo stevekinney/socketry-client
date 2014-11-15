@@ -1,0 +1,69 @@
+a.button {
+  text-decoration: none;
+}
+
+button, input[type="submit"], .button {
+  color: white;
+  background-color: $ocean;
+  font-size: 0.8rem;
+  font-weight: 300;
+  border: 1px solid $ocean;
+  border-radius: 3px;
+  outline: none;
+  padding: 0.4rem 1rem;
+  font-weight: 300;
+  @media screen and (max-width: 480px) {
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
+  }
+}
+
+button:hover, input[type="submit"]:hover, .button:hover {
+  background-color: lighten($ocean, 20);
+}
+
+button:active, input[type="submit"]:active, .button:active {
+  background-color: darken($ocean, 20);
+}
+
+button.forward:after, input[type="submit"].forward:after, .button.forward:after {
+  content: ' →';
+}
+
+button.deactivated, input[type="submit"].deactivated, .button.deactivated {
+  background-color: rgb(189, 225, 235);
+  pointer-events: none;
+}
+
+button.secondary, input[type="submit"].secondary, .button.secondary {
+  background-color: white;
+  box-sizing: border-box;
+  color: $ocean;
+}
+
+button.secondary:hover, input[type="submit"].secondary:hover, .button.secondary:hover {
+  background-color: #F9F9F9;
+  color: lighten($ocean, 20);
+}
+
+button.secondary:active, input[type="submit"].secondary:active, .button.secondary:active {
+  background-color: #EEE;
+}
+
+button.xl, input[type="submit"].xl, .button.xl {
+  font-size: 1.5em;
+}
+
+button.small, input[type="submit"].small, .button.small {
+  font-size: 0.8em;
+  padding: 0.8em 1em;
+  vertical-align: center;
+}
+
+.button-bar {
+  border-top: 1px dashed $lightBlue;
+  text-align: right;
+  padding: 2rem 0;
+  margin-top: 1rem;
+}

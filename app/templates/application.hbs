@@ -1,3 +1,33 @@
-<h2 id='title'>Welcome to Ember.js</h2>
+<div id="container">
 
-{{outlet}}
+  <h1>Ember.js Denver Chat</h1>
+
+  <div class="message-count">
+    <span class="message-count-label">Number of messages</span>
+    {{messageCount}}
+  </div>
+
+  <div class="messages">
+    {{#each}}
+    <div class="message">
+      <span class="message-author">{{author}}</span>
+      <span class="message-body">{{message}}</span>
+    </div>
+    {{/each}}
+  </div>
+
+  <div>
+  {{#unless author}}
+    <label>Your Name</label>
+    {{input type="text" id="author-input" placeholder="Your name here…" value=authorInput}}
+
+    <button id="send-message" {{action "setAuthor"}}>Start Chatting</button>
+  {{else}}
+    <label>Your Message</label>
+    {{textarea type="text" id="message-input" placeholder="Your message here…" value=message}}
+
+    <button id="send-message" {{action "sendMessage"}}>Send Message</button>
+  {{/unless}}
+  </div>
+
+</div>

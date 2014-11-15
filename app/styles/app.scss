@@ -1,0 +1,47 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600);
+
+@import 'colors';
+@import 'buttons';
+@import 'inputs';
+
+html {
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+  font-family: inherit;
+}
+
+#container {
+  margin: auto;
+  max-width: 600px;
+}
+
+.messages {
+  background-color: $pale;
+  border: 1px solid darken($pale, 30);
+  margin-bottom: 1em;
+  padding: 1em;
+}
+
+.message-author {
+  color: $orange;
+  font-weight: 400;
+  &:after {
+    content: ': ';
+  }
+}
+
+.message-count {
+  font-size: 0.6em;
+}
+
+.message-count-label {
+  color: $red;
+  &:after {
+    content: ': ';
+  }
+}
