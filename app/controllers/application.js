@@ -17,11 +17,12 @@ export default Ember.ArrayController.extend({
       this.set('author', this.get('authorInput'));
     },
     sendMessage: function () {
-      var message = Message.create({
+      var message = {
+        type: 'newMessage',
         author: this.get('author'),
         message: this.get('message')
-      });
-      this.get('content').pushObject(message);
+      };
+      this.get('controllers.websocket').sendMessage(JSON.stringify(message));
       this.set('message', null);
     }
   }
