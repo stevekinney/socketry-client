@@ -2,6 +2,8 @@ import Ember from 'ember';
 import Message from 'socketry/models/message';
 
 export default Ember.ArrayController.extend({
+  needs: ['websocket'],
+
   author: null,
   authorInput: null,
   message: null,
