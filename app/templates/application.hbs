@@ -8,10 +8,10 @@
   </div>
 
   <div class="messages">
-    {{#each}}
+    {{#each message in model}}
     <div class="message">
-      <span class="message-author">{{author}}</span>
-      <span class="message-body">{{message}}</span>
+      <span class="message-author">{{message.author}}</span>
+      <span class="message-body">{{message.message}}</span>
     </div>
     {{/each}}
   </div>
